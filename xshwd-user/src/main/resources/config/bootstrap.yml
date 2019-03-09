@@ -1,0 +1,40 @@
+# ===================================================================
+# Spring Cloud Config bootstrap configuration for the "dev" profile
+# In prod profile, properties will be overwriten by the ones defined in bootstrap-prod.yml
+# ===================================================================
+
+
+minwmsurl:  10.104.166.2
+jhipster:
+    registry:
+        password: admin
+
+spring:
+    application:
+        name: user
+    profiles:
+        # The commented value for `active` can be replaced with valid Spring profiles to load.
+        # Otherwise, it will be filled in by maven when building the WAR file
+        # Either way, it can be overridden by `--spring.profiles.active` value passed in the commandline or `-Dspring.profiles.active` set in `JAVA_OPTS`
+        active: prod
+    cloud:
+        config:
+            fail-fast: false # if not in "prod" profile, do not force to use Spring Cloud Config
+            uri: http://admin:${jhipster.registry.password}@${minwmsurl}:8761/config
+            # name of the config server's property source (file.yml) that we want to use
+            name: user
+            profile: prod # profile(s) of the property source
+            label: master # toggle to switch to a different version of the configuration as stored in git
+            # it can be set to any label, branch or commit of the config source git repository
+
+info:
+    project:
+        version: #project.version#
+tenxunCos:
+    AppId:  1253852034
+    SecretId:  AKIDAE8yd6ATN4ZxGQJDqLfqs5C8yc5MeOYZ
+    SecretKey:  1ucAXOBnFZhdP8kAVfdP0HTTIwOe7QYt
+    Bucket:   hwjy-dev
+    Region:  ap-guangzhou
+    URL: https://hwjy-dev-1253852034.cosgz.myqcloud.com
+    CDN: https://hwjy-dev-1253852034.file.myqcloud.com

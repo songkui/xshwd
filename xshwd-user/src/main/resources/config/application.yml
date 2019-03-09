@@ -1,0 +1,155 @@
+# ===================================================================
+# Spring Boot configuration.
+#
+# This configuration will be overridden by the Spring profile you use,
+# for example application-dev.yml if you use the "dev" profile.
+#
+# More information on profiles: https://jhipster.github.io/profiles/
+# More information on configuration properties: https://jhipster.github.io/common-application-properties/
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+eureka:
+    client:
+        enabled: true
+        healthcheck:
+            enabled: true
+        fetch-registry: true
+        register-with-eureka: true
+        instance-info-replication-interval-seconds: 10
+        registry-fetch-interval-seconds: 10
+    instance:
+        appname: user
+        instanceId: user:${spring.application.instance-id:${random.value}}
+        lease-renewal-interval-in-seconds: 5
+        lease-expiration-duration-in-seconds: 10
+        status-page-url-path: ${management.context-path}/info
+        health-check-url-path: ${management.context-path}/health
+        metadata-map:
+            zone: primary # This is needed for the load balancer
+            profile: ${spring.profiles.active}
+            version: ${info.project.version}
+ribbon:
+    eureka:
+        enabled: true
+# See http://cloud.spring.io/spring-cloud-netflix/spring-cloud-netflix.html
+zuul: # those values must be configured depending on the application specific needs
+    host:
+        max-total-connections: 1000
+        max-per-route-connections: 100
+    semaphore:
+        max-semaphores: 500
+
+# See https://github.com/Netflix/Hystrix/wiki/Configuration
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 10000
+
+management:
+    security:
+        roles: ADMIN
+    context-path: /management
+    health:
+        mail:
+            enabled: false # When using the MailService, configure an SMTP server and set this to true
+spring:
+    application:
+        name: user
+    jackson:
+        serialization.write_dates_as_timestamps: false
+    jpa:
+        open-in-view: false
+        hibernate:
+            ddl-auto: none
+            naming:
+                physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+                implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+    messages:
+        basename: i18n/messages
+    mvc:
+        favicon:
+            enabled: false
+    thymeleaf:
+        mode: XHTML
+
+security:
+    basic:
+        enabled: false
+
+server:
+    session:
+        cookie:
+            http-only: true
+
+
+# ===================================================================
+# JHipster specific properties
+#
+# Full reference is available at: https://jhipster.github.io/common-application-properties/
+# ===================================================================
+
+jhipster:
+    async:
+        core-pool-size: 2
+        max-pool-size: 50
+        queue-capacity: 10000
+    # By default CORS is disabled. Uncomment to enable.
+    #cors:
+        #allowed-origins: "*"
+        #allowed-methods: GET, PUT, POST, DELETE, OPTIONS
+        #allowed-headers: "*"
+        #exposed-headers:
+        #allow-credentials: true
+        #max-age: 1800
+    mail:
+        from: user@localhost
+    swagger:
+        default-include-pattern: /api/.*
+        title: user API
+        description: user API documentation
+        version: 0.0.1
+        terms-of-service-url:
+        contact-name:
+        contact-url:
+        contact-email:
+        license:
+        license-url:
+    ribbon:
+        display-on-active-profiles: prod
+
+#mybatis
+mybatis-plus:
+   mapper-locations: classpath*:com/xshwd/orm/user/mapper/xml/*.xml
+  #实体扫描，多个package用逗号或者分号分隔
+   typeAliasesPackage: com.xshwd.orm.user.entity
+
+
+
+
+smsuser: JS6722
+smspasswd: 955228
+masterIpAddress: 112.91.147.35:8086
+msgTemplate: 你的短信验证码%s,5分钟内有效！
+msgTemplate1: 悄悄提醒您，您的好友'%s'已注册成功，赶快邀请Ta开通会员一起赚钱吧，Ta可能需要您引导一下哦。
+msgTemplate2: 尊敬的好物加一店主，您的好友'%s'已成为好物加一试用店主，赶快邀请他成为正式店主，享受更多的权益吧。
+#msgTemplate3: 尊敬的好物加一店主，您的好友'%s'已成为正式店主，您的邀请新人奖励已发放至好物加一APP个人账户里，请注意查收。
+msgTemplate3: 您好棒，您的好友'%s'已成为超级会员，提醒Ta完成首单加入社群,享受更多尊贵权益吧。
+msgTemplate4: 恭喜您注册成功，成为好物加一实习店主，请尽升级成为正式店主，享受更多特权吧。
+msgTemplate5: 恭喜您获得7天免费开店特权；如需享受更多收益，请尽快升级为正式店主。温馨提示：7天内，成为正式店主只需168元，逾期将恢复原价668元。
+msgTemplate6: 尊敬的用户，恭喜您付费成功，成为好物加一正式店主，立刻进入您的店铺，实现赚钱小目标吧。
+
+msgTemplate7: 尊敬的用户，恭喜您付费成功，成为好物加一正式店主，立刻进入您的店铺，实现赚钱小目标吧。
+msgTemplate8: 尊敬的用户，恭喜您付费成功，成为好物加一正式店主，立刻进入您的店铺，实现赚钱小目标吧。
+msgTemplate9: 尊敬的用户，恭喜您付费成功，成为好物加一正式店主，立刻进入您的店铺，实现赚钱小目标吧。
+
+
+application:

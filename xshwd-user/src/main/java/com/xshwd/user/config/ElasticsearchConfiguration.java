@@ -1,0 +1,104 @@
+///*
+// *  THIS FILE IS PART OF C8software PROJECT
+// * Copyright (c) 2011 - 2018 C8.Co.Ltd. All rights reserved.
+// * Mr.Yellow (www.c8software.com) 18-2-1 上午12:04
+// *
+// *
+// */
+//
+//package com.xshwd.user.config;
+//
+////import org.elasticsearch.client.transport.TransportClient;
+////import org.elasticsearch.common.settings.Settings;
+////import org.elasticsearch.common.transport.InetSocketTransportAddress;
+////import org.elasticsearch.transport.client.PreBuiltTransportClient;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
+//import org.springframework.beans.factory.DisposableBean;
+//import org.springframework.beans.factory.FactoryBean;
+//import org.springframework.beans.factory.InitializingBean;
+//import org.springframework.beans.factory.annotation.Value;
+//import org.springframework.context.annotation.Configuration;
+//import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
+//
+//import java.net.InetAddress;
+//import java.net.UnknownHostException;
+//
+//;
+//
+//@Configuration
+//@EnableGlobalMethodSecurity(securedEnabled = true)
+//public class ElasticsearchConfiguration implements FactoryBean<TransportClient>, InitializingBean, DisposableBean {
+//    Logger logger = LoggerFactory.getLogger(ElasticsearchConfiguration.class);
+//    @Value("${spring.data.elasticsearch.cluster-nodes}") //获取集群节点
+//    private String clusterNodes;
+//
+//    @Value("${spring.data.elasticsearch.cluster-name}")//获取集群名称
+//    private String clusterName;
+//
+//    private TransportClient client;
+//
+//    @Override
+//    public void destroy() throws Exception {//销毁client
+//        try {
+//            logger.info("Closing elasticSearch client");
+//            if (client != null) {
+//                client.close();
+//            }
+//        } catch (final Exception e) {
+//            logger.error("Error closing ElasticSearch client: ", e);
+//        }
+//    }
+//
+//    @Override
+//    public TransportClient getObject() throws Exception {
+//        return client;
+//    }
+//
+//    @Override
+//    public Class<TransportClient> getObjectType() {
+//        return TransportClient.class;
+//    }
+//
+//    @Override
+//    public boolean isSingleton() {
+//        return false;
+//    }
+//
+//    @Override
+//    public void afterPropertiesSet() throws Exception {
+//        buildClient();
+//    }
+//
+//    //创建client
+//    protected void buildClient() {
+//        try {
+//
+//            PreBuiltTransportClient preBuiltTransportClient = new PreBuiltTransportClient(settings());
+//            System.out.println("clusterNodes:" + clusterNodes);
+//            if (!"".equals(clusterNodes)) {
+//                for (String nodes : clusterNodes.split(",")) {
+//                    String InetSocket[] = nodes.split(":");
+//                    String Address = InetSocket[0];
+//                    Integer port = Integer.valueOf(InetSocket[1]);
+//                    preBuiltTransportClient.addTransportAddress(new InetSocketTransportAddress(InetAddress.getByName(Address), port));
+//                }
+//                client = preBuiltTransportClient;
+//                System.out.println("client" + client);
+//            }
+//        } catch (UnknownHostException e) {
+//            logger.error(e.getMessage());
+//            System.out.println("连接错误");
+//        }
+//    }
+//
+//    //设置集群名称seetings
+//    private Settings settings() {
+//        Settings settings = Settings.builder()
+//            .put("cluster.name", clusterName).build();
+//        client = new PreBuiltTransportClient(settings);
+//        System.out.println("clusterName:" + clusterName);
+//        return settings;
+//    }
+//
+//}
