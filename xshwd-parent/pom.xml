@@ -174,7 +174,7 @@
 	<modules>
 		<module>../xshwd-core</module>
 		<module>../xshwd-user</module>
-		<module>../xshwd-item</module>
+		<module>../xshwd-order</module>
 	<!--	<module>../xshwd-order</module>-->
 	</modules>
 

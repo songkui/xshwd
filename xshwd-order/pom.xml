@@ -11,11 +11,11 @@
         <relativePath>../xshwd-parent/pom.xml</relativePath>
     </parent>
 
-    <groupId>com.xshwd.item</groupId>
-    <artifactId>xshwd-item</artifactId>
+    <groupId>com.xshwd.order</groupId>
+    <artifactId>xshwd-order</artifactId>
     <packaging>war</packaging>
     <version>0.0.1-SNAPSHOT</version>
-    <name>item</name>
+    <name>order</name>
 
 
     <properties>
