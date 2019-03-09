@@ -1,4 +1,4 @@
-package com.xshwd.item.config;
+package com.xshwd.order.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;

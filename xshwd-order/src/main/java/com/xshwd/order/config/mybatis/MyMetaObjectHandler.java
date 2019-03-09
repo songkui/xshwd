@@ -6,7 +6,7 @@
  *
  */
 
-package com.xshwd.item.config.mybatis;
+package com.xshwd.order.config.mybatis;
 
 import com.baomidou.mybatisplus.mapper.MetaObjectHandler;
 import org.apache.ibatis.reflection.MetaObject;

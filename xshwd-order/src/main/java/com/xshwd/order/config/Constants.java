@@ -1,4 +1,4 @@
-package com.xshwd.item.config;
+package com.xshwd.order.config;
 
 /**
  * Application constants.

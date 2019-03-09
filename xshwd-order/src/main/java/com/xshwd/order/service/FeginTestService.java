@@ -1,12 +1,9 @@
-package com.xshwd.item.service;
+package com.xshwd.order.service;
 
-//import com.xshwd.item.config.redis.RedisServer;
-import com.xshwd.item.fegin.UserFeginService;
+import com.xshwd.order.fegin.UserFeginService;
 import com.xshwd.orm.user.entity.AccWxUser;
 import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 
 import java.util.concurrent.TimeUnit;

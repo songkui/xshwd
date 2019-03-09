@@ -6,7 +6,7 @@
  *
  */
 
-package com.xshwd.item.config.fegin;
+package com.xshwd.order.config.fegin;
 
 /**
  * Constants for Spring Security authorities.

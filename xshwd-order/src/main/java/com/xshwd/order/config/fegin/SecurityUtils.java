@@ -6,7 +6,7 @@
  *
  */
 
-package com.xshwd.item.config.fegin;
+package com.xshwd.order.config.fegin;
 
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;

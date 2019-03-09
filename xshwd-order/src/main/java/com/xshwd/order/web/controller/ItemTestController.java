@@ -1,4 +1,4 @@
-package com.xshwd.item.web.controller;
+package com.xshwd.order.web.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

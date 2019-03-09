@@ -14,7 +14,7 @@
  *
  */
 
-package com.xshwd.item.config.mybatis;
+package com.xshwd.order.config.mybatis;
 
 import com.baomidou.mybatisplus.MybatisConfiguration;
 import com.baomidou.mybatisplus.MybatisXMLLanguageDriver;
@@ -39,7 +39,7 @@ import javax.sql.DataSource;
 
 
 @Configuration
-@MapperScan({"com.xshwd.orm.item.mapper"})
+@MapperScan({"com.xshwd.orm.order.mapper"})
 public class MybatisPlusConfig {
 
 	@SuppressWarnings("unused")

@@ -13,7 +13,7 @@ import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(value = "item", configuration = FeginConfiguration.class)
+@FeignClient(value = "order", configuration = FeginConfiguration.class)
 public interface ItemTestFeginService {
 
     @GetMapping("api/item/test/{test}")

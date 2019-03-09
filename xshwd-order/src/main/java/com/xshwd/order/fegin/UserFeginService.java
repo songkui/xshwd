@@ -6,10 +6,10 @@
  *
  */
 
-package com.xshwd.item.fegin;
+package com.xshwd.order.fegin;
 
 import com.xshwd.framework.web.ApiOut;
-import com.xshwd.item.config.fegin.FeginConfiguration;
+import com.xshwd.order.config.fegin.FeginConfiguration;
 import com.xshwd.orm.user.entity.AccWxUser;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -19,11 +19,11 @@ spring:
         port: 6379
         password: redis123
         timeout: 1000
-        pool:
-            max-active: 8
-            min-idle: 0
-            max-idle: 8
-            max-wait: -1
+#        pool:
+#            max-active: 8
+#            min-idle: 0
+#            max-idle: 8
+#            max-wait: -1
     datasource:
         type: com.alibaba.druid.pool.DruidDataSource
         url: jdbc:mysql://127.0.0.1:3306/xshwd_user?useSSL=false&useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=TRUE

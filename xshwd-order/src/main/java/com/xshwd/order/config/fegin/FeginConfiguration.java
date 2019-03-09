@@ -6,7 +6,7 @@
  *
  */
 
-package com.xshwd.item.config.fegin;
+package com.xshwd.order.config.fegin;
 
 import com.netflix.hystrix.exception.HystrixBadRequestException;
 import com.xshwd.framework.exception.MiniBuykerException;

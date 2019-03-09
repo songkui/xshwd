@@ -1,8 +1,7 @@
-package com.xshwd.item.web.controller;
+package com.xshwd.order.web.controller;
 
 import com.xshwd.framework.web.ApiOut;
-import com.xshwd.item.fegin.UserFeginService;
-import com.xshwd.item.service.FeginTestService;
+import com.xshwd.order.service.FeginTestService;
 import com.xshwd.orm.user.entity.AccWxUser;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

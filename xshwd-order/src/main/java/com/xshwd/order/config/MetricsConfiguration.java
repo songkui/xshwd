@@ -1,4 +1,4 @@
-package com.xshwd.item.config;
+package com.xshwd.order.config;
 
 import com.codahale.metrics.JmxReporter;
 import com.codahale.metrics.MetricRegistry;

@@ -1,6 +1,7 @@
-package com.xshwd.item;
+package com.xshwd.order;
 
-import com.xshwd.item.config.DefaultProfileUtil;
+import com.xshwd.order.Application;
+import com.xshwd.order.config.DefaultProfileUtil;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;
 
@@ -16,6 +17,6 @@ public class ApplicationWebXml extends SpringBootServletInitializer {
          * set a default to use when no profile is configured.
          */
         DefaultProfileUtil.addDefaultProfile(application.application());
-        return application.sources(ItemApp.class);
+        return application.sources(Application.class);
     }
 }

@@ -1,32 +1,23 @@
-/*
- *  THIS FILE IS PART OF C8software PROJECT
- * Copyright (c) 2011 - 2018 C8.Co.Ltd. All rights reserved.
- * Mr.Yellow (www.c8software.com) 18-1-15 下午6:42
- *
- *
- */
-
-package com.xshwd.user;
+package com.xshwd.order;
 
 
-import com.xshwd.user.config.ApplicationProperties;
-import com.xshwd.user.config.DefaultProfileUtil;
+import com.xshwd.order.config.ApplicationProperties;
+import com.xshwd.order.config.DefaultProfileUtil;
 import io.github.jhipster.config.JHipsterConstants;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.actuate.autoconfigure.*;
+import org.springframework.boot.actuate.autoconfigure.MetricFilterAutoConfiguration;
+import org.springframework.boot.actuate.autoconfigure.MetricRepositoryAutoConfiguration;
+import org.springframework.boot.actuate.autoconfigure.MetricsDropwizardAutoConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.liquibase.LiquibaseProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.core.env.Environment;
-import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
 import java.net.InetAddress;
@@ -34,30 +25,25 @@ import java.net.UnknownHostException;
 import java.util.Arrays;
 import java.util.Collection;
 
+
 @ComponentScan
 @EnableAutoConfiguration(exclude = {MetricFilterAutoConfiguration.class, MetricRepositoryAutoConfiguration.class, MetricsDropwizardAutoConfiguration.class})
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
 @EnableDiscoveryClient
 @EnableZuulProxy
 @EnableFeignClients
-public class UserApp {
+public class Application {
 
-    private static final Logger log = LoggerFactory.getLogger(UserApp.class);
+    private static final Logger log = LoggerFactory.getLogger(Application.class);
 
     private final Environment env;
 
-    @Bean
-    public RestTemplate restTemplate(){
-        return new RestTemplate();
-    }
-
-
-    public UserApp(Environment env) {
+    public Application(Environment env) {
         this.env = env;
     }
 
     /**
-     * Initializes user.
+     * Initializes item.
      * <p>
      * Spring profiles can be configured with a program arguments --spring.profiles.active=your-active-profile
      * <p>
@@ -83,7 +69,7 @@ public class UserApp {
      * @throws UnknownHostException if the local host name could not be resolved into an address
      */
     public static void main(String[] args) throws UnknownHostException {
-        SpringApplication app = new SpringApplication(UserApp.class);
+        SpringApplication app = new SpringApplication(Application.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         String protocol = "http";

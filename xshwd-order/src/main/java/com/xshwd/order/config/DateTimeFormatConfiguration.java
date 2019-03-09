@@ -1,4 +1,4 @@
-package com.xshwd.item.config;
+package com.xshwd.order.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
