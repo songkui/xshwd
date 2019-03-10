@@ -1,4 +1,4 @@
-package com.xshwd.order.web.controller;
+package com.xshwd.order.webouter.order;
 
 import com.xshwd.framework.web.ApiOut;
 import com.xshwd.order.service.FeginTestService;
