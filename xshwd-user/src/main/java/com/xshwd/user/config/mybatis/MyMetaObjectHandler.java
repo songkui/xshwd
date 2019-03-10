@@ -1,10 +1,3 @@
-/*
- *  THIS FILE IS PART OF C8software PROJECT
- * Copyright (c) 2011 - 2018 C8.Co.Ltd. All rights reserved.
- * Mr.Yellow (www.c8software.com) 18-1-16 下午10:46
- *
- *
- */
 
 package com.xshwd.user.config.mybatis;
 
