@@ -27,7 +27,7 @@ public class FeginTestService {
      * @param openId
      * @return
      */
-    public AccWxUser getUserByOpenId(String openId){
+    public AccWxUser getUserByOpenId(String token, String openId){
         try{
             System.out.println("----~~~~~~~~~~~~~~--------------");
             stringRedisTemplate.opsForValue().set("AASKAA","123");
@@ -37,7 +37,7 @@ public class FeginTestService {
             System.out.println(e.getMessage());
         }
 
-        return userFeginService.getByshopId(openId).getData();
+        return userFeginService.getByshopId(token, openId).getData();
     }
 
 

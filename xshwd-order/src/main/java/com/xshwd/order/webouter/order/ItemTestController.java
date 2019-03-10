@@ -1,9 +1,7 @@
 package com.xshwd.order.webouter.order;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.xshwd.framework.util.Constants;
+import org.springframework.web.bind.annotation.*;
 
 
 @RestController
@@ -11,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class ItemTestController {
 
 
-    @GetMapping("/{test}")
-    public String getTest(@PathVariable("test") String test){
+    @GetMapping(path = "/{test}",  produces = Constants.MEDIA_JSON_TYPE)
+    public String getTest(@RequestHeader String token,  @PathVariable("test") String test){
         return test;
     }
 
