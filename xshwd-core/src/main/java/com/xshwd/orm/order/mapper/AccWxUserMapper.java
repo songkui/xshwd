@@ -1,4 +1,4 @@
-package com.xshwd.orm.item.mapper;
+package com.xshwd.orm.order.mapper;
 //
 //import com.baomidou.mybatisplus.mapper.BaseMapper;
 //import com.xshwd.orm.user.entity.AccWxUser;
