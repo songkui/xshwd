@@ -17,15 +17,15 @@ public class AccWxUserController {
     @Autowired
     private AccWxUserService accWxUserService;
 
-//    @Autowired
-//    private StringRedisTemplate stringRedisTemplate;
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
 
     @GetMapping("/{openId}")
     public ApiOut<AccWxUser> getByshopId(@PathVariable("openId") String openId){
-//        System.out.println("----=============--------------");
-//        stringRedisTemplate.opsForValue().set("User","123");
-//        stringRedisTemplate.expire("User", 5, TimeUnit.MINUTES);
-//        System.out.println("-----==========-------------");
+        System.out.println("----=============--------------");
+        stringRedisTemplate.opsForValue().set("User","123");
+        stringRedisTemplate.expire("User", 5, TimeUnit.MINUTES);
+        System.out.println("-----==========-------------");
         return new ApiOut.Builder<AccWxUser>().data(accWxUserService.getUserByOpenId(openId)).build() ;
 
     }
