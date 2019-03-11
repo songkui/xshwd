@@ -29,7 +29,7 @@ import javax.sql.DataSource;
 @Configuration
 //@MapperScan({"com.xshwd.orm.user.mapper","cc.onion.minibuyker.user.ggpo.mapper","cc.onion.minibuyker.user.offline.mapper",
 //    "cc.onion.minibuyker.user.offline.category.mapper","cc.onion.minibuyker.user.poster.mapper"})
-@MapperScan({"com.xshwd.orm.user.mapper"})
+@MapperScan({"com.xshwd.orm.user.mapper","com.xshwd.orm.product.mapper"})
 public class MybatisPlusConfig {
 
     @SuppressWarnings("unused")
@@ -41,13 +41,13 @@ public class MybatisPlusConfig {
         MybatisSqlSessionFactoryBean sqlSessionFactory = new MybatisSqlSessionFactoryBean();
         sqlSessionFactory.setDataSource(dataSource);
 //        sqlSessionFactory.setTypeAliasesPackage("cc.onion.minibuyker.user.mapper,cc.onion.minibuyker.user.ggpo.mapper,cc.onion.minibuyker.user.offline.mapper,cc.onion.minibuyker.user.offline.category.mapper");
-        sqlSessionFactory.setTypeAliasesPackage("com.xshwd.orm.user.mapper");
+        sqlSessionFactory.setTypeAliasesPackage("com.xshwd.orm.user.mapper,com.xshwd.orm.product.mapper");
 
 
         PathMatchingResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
 
 //        sqlSessionFactory.setMapperLocations(resolver.getResources("classpath*:cc/onion/minibuyker/user/**/mapper/xml/*.xml"));
-        sqlSessionFactory.setMapperLocations(resolver.getResources("classpath*:com/xshwd/orm/user/mapper/xml/*.xml"));
+        sqlSessionFactory.setMapperLocations(resolver.getResources("classpath*:com/xshwd/orm/**/mapper/xml/*.xml"));
         MybatisConfiguration configuration = new MybatisConfiguration();
 
 //        globalConfiguration.setMetaObjectHandler(new MyMetaObjectHandler());
