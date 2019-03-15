@@ -21,7 +21,7 @@ import lombok.ToString;
 @EqualsAndHashCode(callSuper = false)
 
 @ApiModel("微信用户信息")
-@TableName("acc_wx_user")
+@TableName("usr_wx_user")
 public class AccWxUser extends BaseEntity<AccWxUser> {
 
     private static final long serialVersionUID = 114520457105520L;

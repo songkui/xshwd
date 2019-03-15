@@ -30,7 +30,7 @@ spring:
             max-wait: -1
     datasource:
         type: com.alibaba.druid.pool.DruidDataSource
-        url: jdbc:mysql://127.0.0.1:3306/xshwd_user?useSSL=false&useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=TRUE
+        url: jdbc:mysql://127.0.0.1:3306/xshwd_order?useSSL=false&useUnicode=true&characterEncoding=utf8&autoReconnect=true&rewriteBatchedStatements=TRUE
         username: root
         password: 258
     mail:
