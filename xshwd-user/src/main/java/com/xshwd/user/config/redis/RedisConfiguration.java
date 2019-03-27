@@ -10,7 +10,7 @@ import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 /**
  * @Auther: SK
  * @Date: 2019/3/16 11:12
- * @Description:
+ * @Description: redis 设置配置文件 notify-keyspace-events Ex
  */
 
 
