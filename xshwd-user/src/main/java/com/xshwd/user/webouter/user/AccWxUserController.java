@@ -27,8 +27,15 @@ public class AccWxUserController {
 //    @PutMapping(path = "/purchase/{sid}/{code}", produces = Constants.MEDIA_JSON_TYPE)
     public ApiOut<AccWxUser> getByshopId(@RequestHeader String token, @PathVariable("openId") String openId){
         System.out.println("----============Token="+token);
-        stringRedisTemplate.opsForValue().set("User","123");
-        stringRedisTemplate.expire("User", 5, TimeUnit.MINUTES);
+        stringRedisTemplate.opsForValue().set("user:123","123");
+        stringRedisTemplate.opsForValue().set("user:456","123");
+        stringRedisTemplate.expire("user:123", 10, TimeUnit.SECONDS);
+        stringRedisTemplate.expire("user:456", 10, TimeUnit.SECONDS);
+
+        for (int i = 0; i<80; i++){
+            stringRedisTemplate.opsForValue().set("order:"+(i+2),"123");
+            stringRedisTemplate.expire("order:"+(i+2), (i+2), TimeUnit.SECONDS);
+        }
         System.out.println("-----==========-------------");
         return new ApiOut.Builder<AccWxUser>().data(accWxUserService.getUserByOpenId(openId)).build() ;
     }

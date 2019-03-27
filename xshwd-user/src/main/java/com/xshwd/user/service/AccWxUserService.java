@@ -72,6 +72,10 @@ public class AccWxUserService {
 
     }
 
+    public void testRedisEX(String key){
+        logger.info(" =============================================== EXE KEY:"+key);
+    }
+
 
 
 
